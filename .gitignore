@@ -1,0 +1,29 @@
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.VC.db
+*.opendb
+
+# Build output
+Debug/
+Release/
+x64/
+x86/
+
+# Compiled binaries and intermediates
+*.exe
+*.obj
+*.pdb
+*.idb
+*.ilk
+*.tlog
+*.log
+*.lastbuildstate
+*.ipch
+
+# Others
+*.cache
+*.tmp
+*.bak
