@@ -20,6 +20,7 @@ The current version provides the following commands:
 
 ```bash
 PowerPointCLI/Release/PowerPointCLI.exe
+```
 
 You can see these commands in action by running the CLI and typing:
 
