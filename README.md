@@ -55,3 +55,40 @@ show-slide -all
 ```text
 help
 ```
+
+#File structure in Visual Studio
+
+PowerPointCLI/
+│
+├── include/
+│   ├── CLI_Parser/
+│   │   ├── CommandFactories.h
+│   │   ├── CommandRegistry.h
+│   │   ├── Commands.h
+│   │   ├── Controller.h
+│   │   ├── ICommand.h
+│   │   ├── ICommandFactory.h
+│   │   ├── Parser.h
+│   │   ├── Token.h
+│   │   └── Tokenizer.h
+│   │
+│   ├── Model/
+│   │   ├── IShape.h
+│   │   ├── Model.h
+│   │   └── Shapes.h
+│   │
+│   └── View/
+│       ├── ConsoleView.h
+│       └── IView.h
+│
+├── src/
+│   ├── CLI_Parser/
+│   │   ├── Commands.cpp
+│   │   ├── Parser.cpp
+│   │   ├── Tokenizer.cpp
+│   │
+│   └── PowerPointCLI.cpp
+│
+└── PowerPointCLI.vcxproj
+
+# You can see these files ```text here PowerPointCLI/PowerPointCLI/ ```
