@@ -22,7 +22,7 @@ The current version provides the following commands:
 PowerPointCLI/Release/PowerPointCLI.exe
 ```
 
-You can see these commands in action by running the CLI and typing:
+## You can see these commands in action by running the CLI and typing:
 
 ```text
 help
@@ -49,6 +49,7 @@ show-slide -index 1
 
 # Show all slides
 show-slide -all
+```
 
 # Display help for available commands
 help
