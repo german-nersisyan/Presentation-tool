@@ -1,4 +1,3 @@
-
 # Visual Studio
 .vs/
 *.suo
@@ -8,12 +7,10 @@
 
 # Build output
 Debug/
-Release/
 x64/
 x86/
 
 # Compiled binaries and intermediates
-*.exe
 *.obj
 *.pdb
 *.idb
@@ -22,6 +19,10 @@ x86/
 *.log
 *.lastbuildstate
 *.ipch
+
+# Ignore all .exe except Release/
+*.exe
+!Release/*.exe
 
 # Others
 *.cache
