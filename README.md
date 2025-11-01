@@ -52,4 +52,6 @@ show-slide -all
 ```
 
 # Display help for available commands
+```text
 help
+```
