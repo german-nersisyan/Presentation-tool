@@ -2,50 +2,19 @@
 //
 
 #include <iostream>
-#include <memory>
-#include "Tokenizer.h"
-#include "Parser.h"
-#include "Commands.h"
-#include "Shapes.h"
-#include "RectangleShape.h"
+#include "Controller.h"
+#include "ConsoleView.h"
+#include "Model.h"
 
 int main() {
-	Tokenizer tokenizer;
-	Parser parser;
-	Shapes slideShapes;
+	ConsoleView view;
+	Model model;
 
-	std::string input;
-	std::cout << "Enter command: ";
-	std::getline(std::cin, input);
+	Controller controller(view, model);
 
-	try {
-		auto tokens = tokenizer.tokenize(input);
-		auto data = parser.parse(tokens);
+	controller.run();
 
-		std::unique_ptr<ICommand> command;
-
-		if (data.name == "add-slide") {
-			command = std::make_unique<AddSlideCommand>(data.options, data.flags);
-		}
-		else if (data.name == "remove-slide") {
-			command = std::make_unique<RemoveSlideCommand>(data.options);
-		}
-		else if (data.name == "add-shape") {
-			command = std::make_unique<AddShapeCommand>(data.options, data.flags, slideShapes);
-		}
-		else {
-			throw std::runtime_error("Unknown command: " + data.name);
-		}
-
-		command->execute();
-
-		std::cout << "\nAll shapes in slide: " << slideShapes.count() << "\n";
-		slideShapes.drawAll();
-
-	}
-	catch (const std::exception& ex) {
-		std::cerr << "Error: " << ex.what() << "\n";
-	}
+	return 0;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

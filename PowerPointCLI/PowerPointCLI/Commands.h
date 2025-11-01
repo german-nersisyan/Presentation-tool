@@ -1,72 +1,81 @@
 #pragma once
 #include "ICommand.h"
-#include "Shapes.h"
-#include "RectangleShape.h"
+#include "Model.h"
+#include "IView.h"
+#include "IShape.h"
+#include "CommandRegistry.h"
+#include <string>
 #include <map>
 #include <set>
-#include <string>
-#include <iostream>
 #include <memory>
 
 class AddSlideCommand : public ICommand {
-	std::map<std::string, std::string> options;
-	std::set<std::string> flags;
+	std::string title;
+	Model& model;
+	IView& view;
 
 public:
-	AddSlideCommand(const std::map<std::string, std::string>& opts,
-		const std::set<std::string>& fl)
-		: options(opts), flags(fl) {}
+	AddSlideCommand(const std::string& t, Model& m, IView& v);
 
-	void execute() override {
-		std::cout << "Executing AddSlideCommand...\n";
-		if (options.count("-title"))
-			std::cout << "Title: " << options.at("-title") << "\n";
-		if (options.count("-background"))
-			std::cout << "Background: " << options.at("-background") << "\n";
-		if (flags.count("-public"))
-			std::cout << "This slide is public.\n";
-	}
+	void execute() override;
 };
 
 class RemoveSlideCommand : public ICommand {
-	std::map<std::string, std::string> options;
+	int index;
+	Model& model;
+	IView& view;
 
 public:
-	RemoveSlideCommand(const std::map<std::string, std::string>& opts)
-		: options(opts) {}
+	RemoveSlideCommand(int idx, Model& m, IView& v);
 
-	void execute() override {
-		std::cout << "Executing RemoveSlideCommand...\n";
-		if (options.count("-index"))
-			std::cout << "Removing slide at index: " << options.at("-index") << "\n";
-	}
+	void execute() override;
 };
 
 class AddShapeCommand : public ICommand {
 	std::map<std::string, std::string> options;
 	std::set<std::string> flags;
-	Shapes& shapesContainer;
+	Model& model;
+	IView& view;
 
 public:
-	AddShapeCommand(const std::map<std::string, std::string>& opts,
+	AddShapeCommand(
+		const std::map<std::string, std::string>& opts,
 		const std::set<std::string>& fl,
-		Shapes& shapes)
-		: options(opts), flags(fl), shapesContainer(shapes) {}
+		Model& m, IView& v);
 
-	void execute() override {
-		std::cout << "Executing AddShapeCommand...\n";
+	void execute() override;
+};
 
-		std::string type = options.count("-type") ? options.at("-type") : "rectangle";
-		int width = options.count("-width") ? std::stoi(options.at("-width")) : 100;
-		int height = options.count("-height") ? std::stoi(options.at("-height")) : 100;
+class ListSlidesCommand : public ICommand {
+	Model& model;
+	IView& view;
 
-		if (type == "rectangle") {
-			shapesContainer.addShape(std::make_shared<RectangleShape>(width, height));
-		}
+public:
+	ListSlidesCommand(Model& m, IView& v);
 
-		if (flags.count("-filled"))
-			std::cout << "Shape is filled.\n";
+	void execute() override;
+};
 
-		std::cout << "Added shape: " << type << " (" << width << "x" << height << ")\n";
-	}
+class HelpCommand : public ICommand {
+	IView& view;
+	CommandRegistry& registry;
+
+public:
+	HelpCommand(IView& v, CommandRegistry& r)
+		: view(v), registry(r) {}
+
+	void execute() override;
+};
+
+class ShowSlideCommand : public ICommand {
+	Model& model;
+	IView& view;
+	int index;
+	bool showAll;
+
+public:
+	ShowSlideCommand(Model& m, IView& v, int idx = 0, bool all = false)
+		: model(m), view(v), index(idx), showAll(all) {}
+
+	void execute() override;
 };

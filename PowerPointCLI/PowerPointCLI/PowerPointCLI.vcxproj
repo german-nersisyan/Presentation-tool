@@ -91,8 +91,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>
-      </AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)include\CLI_Parser;$(ProjectDir)include\Model;$(ProjectDir)include\View;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -153,16 +152,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Commands.cpp" />
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="PowerPointCLI.cpp" />
     <ClCompile Include="Tokenizer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CommandFactories.h" />
+    <ClInclude Include="CommandRegistry.h" />
     <ClInclude Include="Commands.h" />
+    <ClInclude Include="ConsoleView.h" />
+    <ClInclude Include="Controller.h" />
     <ClInclude Include="ICommand.h" />
+    <ClInclude Include="ICommandFactory.h" />
     <ClInclude Include="IShape.h" />
+    <ClInclude Include="IView.h" />
+    <ClInclude Include="Model.h" />
     <ClInclude Include="Parser.h" />
-    <ClInclude Include="RectangleShape.h" />
     <ClInclude Include="Shapes.h" />
     <ClInclude Include="Token.h" />
     <ClInclude Include="Tokenizer.h" />

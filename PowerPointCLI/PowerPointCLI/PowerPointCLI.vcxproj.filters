@@ -22,6 +22,12 @@
     <Filter Include="Исходные файлы\CLI_Parser">
       <UniqueIdentifier>{047fd45d-c2b0-407c-a3bc-497acb86d3c6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\View">
+      <UniqueIdentifier>{8261905f-5acf-4374-8dc1-ae1757fd0465}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Model">
+      <UniqueIdentifier>{a9588fd1-8ee0-49ae-8ce9-334148d2de25}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PowerPointCLI.cpp">
@@ -31,6 +37,9 @@
       <Filter>Исходные файлы\CLI_Parser</Filter>
     </ClCompile>
     <ClCompile Include="Parser.cpp">
+      <Filter>Исходные файлы\CLI_Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands.cpp">
       <Filter>Исходные файлы\CLI_Parser</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,17 +56,35 @@
     <ClInclude Include="Parser.h">
       <Filter>include\CLI_Psrser</Filter>
     </ClInclude>
-    <ClInclude Include="IShape.h">
-      <Filter>include\CLI_Psrser</Filter>
-    </ClInclude>
-    <ClInclude Include="Shapes.h">
-      <Filter>include\CLI_Psrser</Filter>
-    </ClInclude>
-    <ClInclude Include="RectangleShape.h">
-      <Filter>include\CLI_Psrser</Filter>
-    </ClInclude>
     <ClInclude Include="Commands.h">
       <Filter>include\CLI_Psrser</Filter>
+    </ClInclude>
+    <ClInclude Include="ICommandFactory.h">
+      <Filter>include\CLI_Psrser</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandRegistry.h">
+      <Filter>include\CLI_Psrser</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandFactories.h">
+      <Filter>include\CLI_Psrser</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>include\CLI_Psrser</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleView.h">
+      <Filter>include\View</Filter>
+    </ClInclude>
+    <ClInclude Include="IView.h">
+      <Filter>include\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Shapes.h">
+      <Filter>include\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="IShape.h">
+      <Filter>include\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>include\Model</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
