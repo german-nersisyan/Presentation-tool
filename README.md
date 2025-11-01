@@ -58,6 +58,7 @@ help
 
 #File structure in Visual Studio
 
+```text
 PowerPointCLI/
 │
 ├── include/
@@ -90,5 +91,6 @@ PowerPointCLI/
 │   └── PowerPointCLI.cpp
 │
 └── PowerPointCLI.vcxproj
+```
 
 # You can see these files ```text here PowerPointCLI/PowerPointCLI/ ```
