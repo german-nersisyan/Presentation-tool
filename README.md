@@ -16,15 +16,15 @@ The current version provides the following commands:
 - **show-slide** : Show a slide's content. Options: `-index N` or `-all` flag.
 - **help** : Show help message with available commands.
 
-You can see these commands in action by running the CLI and typing:
-
-```text
-help
-
 ## You can run the program using:
 
 ```bash
 PowerPointCLI/Release/PowerPointCLI.exe
+
+You can see these commands in action by running the CLI and typing:
+
+```text
+help
 
 ## Example Usage
 
