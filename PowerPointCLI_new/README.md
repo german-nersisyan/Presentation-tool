@@ -69,6 +69,7 @@ src/
 
 ## Example Usage
 
+```text
 add-slide -title Demo
 add-shape -type rectangle -width 120 -height 60 -color red -filled
 add-shape -type square -size 40 -color blue
@@ -76,3 +77,4 @@ export-svg -index 0 -file demo.svg
 undo
 redo
 exit
+```
