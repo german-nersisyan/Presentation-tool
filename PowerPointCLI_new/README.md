@@ -31,6 +31,7 @@ This project is intended as an educational and portfolio-level project.
 
 #File structure in Visual Studio
 
+```text
 include/
 ├─ CLI_Prsr/
 │ ├─ CommandFactories.h
@@ -64,7 +65,7 @@ src/
 ├─ Logger.cpp
 ├─ PowerPointCLI.cpp
 └─ SVGRenderer.cpp
-
+```
 
 ## Example Usage
 
