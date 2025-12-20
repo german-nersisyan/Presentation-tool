@@ -1,0 +1,69 @@
+#include "SVGRenderer.h"
+#include "Shapes.h"
+#include <fstream>
+#include <sstream>
+
+bool SVGRenderer::renderSlide(const Model& model, int slideIndex, const std::string& filename) const {
+	if (slideIndex < 0 || slideIndex >= model.getSlideCount())
+		return false;
+
+	std::ofstream out(filename);
+	if (!out.is_open())
+		return false;
+
+	// SVG header
+	out << "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"800\" height=\"600\">\n";
+	out << "<rect width=\"100%\" height=\"100%\" fill=\"white\" />\n";
+
+	const auto& shapes = model.getShapes(slideIndex);
+
+	for (const auto& shape : shapes) {
+
+		// Rectangle
+		if (shape->type() == "Rectangle") {
+			auto r = std::dynamic_pointer_cast<RectangleShape>(shape);
+			out << "<rect x=\"50\" y=\"50\" "
+				<< "width=\"" << r->getWidth() << "\" "
+				<< "height=\"" << r->getHeight() << "\" "
+				<< "fill=\"" << (r->isFilled() ? r->getColor() : "none") << "\" "
+				<< "stroke=\"" << r->getColor() << "\" />\n";
+		}
+
+		// Square
+		else if (shape->type() == "Square") {
+			auto s = std::dynamic_pointer_cast<SquareShape>(shape);
+			out << "<rect x=\"100\" y=\"100\" "
+				<< "width=\"" << s->getSize() << "\" "
+				<< "height=\"" << s->getSize() << "\" "
+				<< "fill=\"" << (s->isFilled() ? s->getColor() : "none") << "\" "
+				<< "stroke=\"" << s->getColor() << "\" />\n";
+		}
+
+		// Circle
+		else if (shape->type() == "Circle") {
+			auto c = std::dynamic_pointer_cast<CircleShape>(shape);
+			out << "<circle cx=\"" << (200 + c->getX()) << "\" "
+				<< "cy=\"" << (200 + c->getY()) << "\" "
+				<< "r=\"" << c->getRadius() << "\" "
+				<< "fill=\"" << (c->isFilled() ? "black" : "none") << "\" "
+				<< "stroke=\"black\" />\n";
+		}
+
+		// Triangle
+		else if (shape->type() == "Triangle") {
+			auto t = std::dynamic_pointer_cast<TriangleShape>(shape);
+			int side = t->getSide();
+
+			out << "<polygon points=\""
+				<< "300,100 "
+				<< 300 + side << ",100 "
+				<< 300 + side / 2 << "," << (100 - side)
+				<< "\" fill=\"" << (t->isFilled() ? t->getColor() : "none")
+				<< "\" stroke=\"" << t->getColor() << "\" />\n";
+		}
+	}
+
+	out << "</svg>\n";
+	out.close();
+	return true;
+}

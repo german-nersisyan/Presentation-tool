@@ -1,0 +1,3 @@
+add-slide -title Demo
+export-svg -index 0 -file demo.svg
+exit
