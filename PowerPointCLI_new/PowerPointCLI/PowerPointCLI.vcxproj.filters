@@ -34,6 +34,9 @@
     <Filter Include="include\Logger">
       <UniqueIdentifier>{ba86d149-588c-45f9-a75e-846d0c8e1c20}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\Serializer">
+      <UniqueIdentifier>{849548c6-e74b-4e95-9670-1e7bfe40f138}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PowerPointCLI.cpp">
@@ -52,6 +55,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Logger.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="JSONSerializer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -99,9 +105,6 @@
       <Filter>include\Model</Filter>
     </ClInclude>
     <ClInclude Include="CommandHistory.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CommandHistory.h">
       <Filter>include\CLI_Psrser</Filter>
     </ClInclude>
     <ClInclude Include="SVGRenderer.h">
@@ -112,6 +115,9 @@
     </ClInclude>
     <ClInclude Include="CommandJournal.h">
       <Filter>include\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="JSONSerializer.h">
+      <Filter>include\Serializer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

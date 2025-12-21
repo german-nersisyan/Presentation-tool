@@ -4,12 +4,11 @@
 #include "IView.h"
 #include "IShape.h"
 #include "CommandRegistry.h"
+#include "JSONSerializer.h"
 #include <string>
 #include <map>
 #include <set>
 #include <memory>
-
-/* ===================== AddSlide ===================== */
 
 class AddSlideCommand : public ICommand {
 	std::string title;
@@ -24,8 +23,6 @@ public:
 	void undo() override;
 	bool isUndoable() const override;
 };
-
-/* ===================== RemoveSlide ===================== */
 
 class RemoveSlideCommand : public ICommand {
 	int index;
@@ -44,8 +41,6 @@ public:
 	bool isUndoable() const override;
 };
 
-/* ===================== AddShape ===================== */
-
 class AddShapeCommand : public ICommand {
 	std::map<std::string, std::string> options;
 	std::set<std::string> flags;
@@ -63,8 +58,6 @@ public:
 	bool isUndoable() const override;
 };
 
-/* ===================== ListSlides ===================== */
-
 class ListSlidesCommand : public ICommand {
 	Model& model;
 	IView& view;
@@ -76,8 +69,6 @@ public:
 	void undo() override;
 	bool isUndoable() const override;
 };
-
-/* ===================== Help ===================== */
 
 class HelpCommand : public ICommand {
 	IView& view;
@@ -91,7 +82,6 @@ public:
 	bool isUndoable() const override;
 };
 
-/* ===================== MoveShapeCommand ===================== */
 class MoveShapeCommand : public ICommand {
 	Model& model;
 	IView& view;
@@ -101,7 +91,6 @@ class MoveShapeCommand : public ICommand {
 	int newY;
 	bool moved = false;
 
-	// Logical position storage for undo
 	int oldX = 0;
 	int oldY = 0;
 
@@ -113,7 +102,6 @@ public:
 	bool isUndoable() const override;
 };
 
-/* ===================== DeleteShapeCommand ===================== */
 class DeleteShapeCommand : public ICommand {
 	Model& model;
 	IView& view;
@@ -128,4 +116,49 @@ public:
 	void execute() override;
 	void undo() override;
 	bool isUndoable() const override;
+};
+
+class SaveJsonCommand : public ICommand {
+	Model& model;
+	IView& view;
+	std::string file;
+	JSONSerializer serializer;
+
+public:
+	SaveJsonCommand(const std::string& f, Model& m, IView& v)
+		: file(f), model(m), view(v) {}
+
+	void execute() override {
+		if (serializer.save(model, file))
+			view.showMessage("Saved presentation to " + file);
+		else
+			view.showMessage("Failed to save JSON");
+	}
+
+	void undo() override {}
+	bool isUndoable() const override { return false; }
+};
+
+class LoadJsonCommand : public ICommand {
+	Model& model;
+	IView& view;
+	std::string file;
+	JSONSerializer serializer;
+
+public:
+	LoadJsonCommand(const std::string& f, Model& m, IView& v)
+		: file(f), model(m), view(v) {}
+
+	void execute() override {
+		if (serializer.load(model, file))
+			view.showMessage("Loaded presentation from " + file);
+		else
+			view.showMessage("Failed to load JSON");
+	}
+
+	void undo() override { }
+
+	bool isUndoable() const override {
+		return false;
+	}
 };

@@ -38,6 +38,8 @@ public:
 		registry.registerFactory("help", std::make_unique<HelpFactory>(registry));
 		registry.registerFactory("move-shape", std::make_unique<MoveShapeFactory>());
 		registry.registerFactory("delete-shape", std::make_unique<DeleteShapeFactory>());
+		registry.registerFactory("save-json", std::make_unique<SaveJsonFactory>());
+		registry.registerFactory("load-json", std::make_unique<LoadJsonFactory>());
 
 		Logger::instance().info("Controller initialized");
 	}
@@ -85,7 +87,6 @@ public:
 				auto tokens = tokenizer.tokenize(input);
 				auto data = parser.parse(tokens);
 
-				// ----- export-svg (not undoable) -----
 				if (data.name == "export-svg") {
 					int index = std::stoi(data.options.at("-index"));
 					std::string file = data.options.at("-file");
@@ -106,7 +107,6 @@ public:
 					continue;
 				}
 
-				// ----- normal commands -----
 				auto& factory = registry.getFactory(data.name);
 				auto command = factory.create(data.options, data.flags, model, view);
 

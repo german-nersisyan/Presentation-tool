@@ -106,6 +106,37 @@ public:
 	}
 };
 
+class SaveJsonFactory : public ICommandFactory {
+public:
+	std::unique_ptr<ICommand> create(
+		const std::map<std::string, std::string>& options,
+		const std::set<std::string>&,
+		Model& model,
+		IView& view) override {
+
+		auto it = options.find("-file");
+		if (it == options.end())
+			throw std::runtime_error("Missing -file option");
+
+		return std::make_unique<SaveJsonCommand>(it->second, model, view);
+	}
+};
+
+class LoadJsonFactory : public ICommandFactory {
+public:
+	std::unique_ptr<ICommand> create(
+		const std::map<std::string, std::string>& options,
+		const std::set<std::string>&,
+		Model& model,
+		IView& view) override {
+
+		auto it = options.find("-file");
+		if (it == options.end())
+			throw std::runtime_error("Missing -file option");
+
+		return std::make_unique<LoadJsonCommand>(it->second, model, view);
+	}
+};
 
 /*class ShowSlideFactory : public ICommandFactory {
 public:

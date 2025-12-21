@@ -1,0 +1,56 @@
+{
+    "slides": [
+        {
+            "shapes": [],
+            "title": "Intro"
+        },
+        {
+            "shapes": [],
+            "title": "Architecture"
+        },
+        {
+            "shapes": [
+                {
+                    "color": "red",
+                    "filled": true,
+                    "height": 60,
+                    "type": "Rectangle",
+                    "width": 120
+                },
+                {
+                    "color": "blue",
+                    "filled": false,
+                    "size": 40,
+                    "type": "Square"
+                }
+            ],
+            "title": "Demo"
+        },
+        {
+            "shapes": [],
+            "title": "Intro"
+        },
+        {
+            "shapes": [],
+            "title": "Architecture"
+        },
+        {
+            "shapes": [
+                {
+                    "color": "red",
+                    "filled": true,
+                    "height": 60,
+                    "type": "Rectangle",
+                    "width": 120
+                },
+                {
+                    "color": "blue",
+                    "filled": false,
+                    "size": 40,
+                    "type": "Square"
+                }
+            ],
+            "title": "Demo"
+        }
+    ]
+}

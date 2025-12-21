@@ -1,3 +1,37 @@
 add-slide -title Demo
 export-svg -index 0 -file demo.svg
 exit
+add-slide -title Demo
+add-shape -type rectangle -width 120 -height 60 -color red -filled
+add-shape -type square -size 40 -color blue
+export-svg -index 0 -file demo.svg
+undo
+redo
+exit
+exit
+exit
+add-slide -title Intro
+add-slide -title Architecture
+add-slide -title Demo
+add-shape -type rectangle -width 120 -height 60 -color red -filled
+add-shape -type square -size 40 -color blue
+save-json -file demo.json
+exit
+add-slide -title Intro
+add-slide -title Architecture
+add-slide -title Demo
+add-shape -type rectangle -width 120 -height 60 -color red -filled
+add-shape -type square -size 40 -color blue
+add-slide -title Intro
+add-slide -title Architecture
+add-slide -title Demo
+add-shape -type rectangle -width 120 -height 60 -color red -filled
+add-shape -type square -size 40 -color blue
+save-json -file demo.json
+exit
+load-json -file demo.json
+list-slides
+exit
+exit
+exit
+exit

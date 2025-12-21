@@ -11,7 +11,6 @@ bool SVGRenderer::renderSlide(const Model& model, int slideIndex, const std::str
 	if (!out.is_open())
 		return false;
 
-	// SVG header
 	out << "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"800\" height=\"600\">\n";
 	out << "<rect width=\"100%\" height=\"100%\" fill=\"white\" />\n";
 
@@ -19,7 +18,6 @@ bool SVGRenderer::renderSlide(const Model& model, int slideIndex, const std::str
 
 	for (const auto& shape : shapes) {
 
-		// Rectangle
 		if (shape->type() == "Rectangle") {
 			auto r = std::dynamic_pointer_cast<RectangleShape>(shape);
 			out << "<rect x=\"50\" y=\"50\" "
@@ -29,7 +27,6 @@ bool SVGRenderer::renderSlide(const Model& model, int slideIndex, const std::str
 				<< "stroke=\"" << r->getColor() << "\" />\n";
 		}
 
-		// Square
 		else if (shape->type() == "Square") {
 			auto s = std::dynamic_pointer_cast<SquareShape>(shape);
 			out << "<rect x=\"100\" y=\"100\" "
@@ -39,7 +36,6 @@ bool SVGRenderer::renderSlide(const Model& model, int slideIndex, const std::str
 				<< "stroke=\"" << s->getColor() << "\" />\n";
 		}
 
-		// Circle
 		else if (shape->type() == "Circle") {
 			auto c = std::dynamic_pointer_cast<CircleShape>(shape);
 			out << "<circle cx=\"" << (200 + c->getX()) << "\" "
@@ -49,7 +45,6 @@ bool SVGRenderer::renderSlide(const Model& model, int slideIndex, const std::str
 				<< "stroke=\"black\" />\n";
 		}
 
-		// Triangle
 		else if (shape->type() == "Triangle") {
 			auto t = std::dynamic_pointer_cast<TriangleShape>(shape);
 			int side = t->getSide();

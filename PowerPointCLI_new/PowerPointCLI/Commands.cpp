@@ -1,5 +1,4 @@
 #include "Commands.h"
-/* ===================== AddSlide ===================== */
 
 AddSlideCommand::AddSlideCommand(const std::string& t, Model& m, IView& v)
 	: title(t), model(m), view(v) {}
@@ -18,7 +17,6 @@ bool AddSlideCommand::isUndoable() const {
 	return true;
 }
 
-/* ===================== RemoveSlide ===================== */
 
 RemoveSlideCommand::RemoveSlideCommand(int idx, Model& m, IView& v)
 	: index(idx), model(m), view(v) {}
@@ -46,7 +44,6 @@ bool RemoveSlideCommand::isUndoable() const {
 	return true;
 }
 
-/* ===================== AddShape ===================== */
 
 AddShapeCommand::AddShapeCommand(
 	const std::map<std::string, std::string>& opts,
@@ -101,7 +98,6 @@ bool AddShapeCommand::isUndoable() const {
 	return true;
 }
 
-/* ===================== ListSlides ===================== */
 
 ListSlidesCommand::ListSlidesCommand(Model& m, IView& v)
 	: model(m), view(v) {}
@@ -123,7 +119,6 @@ bool ListSlidesCommand::isUndoable() const {
 	return false;
 }
 
-/* ===================== Help ===================== */
 
 HelpCommand::HelpCommand(IView& v, CommandRegistry& r)
 	: view(v), registry(r) {}
@@ -140,7 +135,6 @@ bool HelpCommand::isUndoable() const {
 	return false;
 }
 
-/* ===================== MoveShapeCommand ===================== */
 MoveShapeCommand::MoveShapeCommand(Model& m, IView& v, int sIdx, int shIdx, int x, int y)
 	: model(m), view(v), slideIndex(sIdx), shapeIndex(shIdx), newX(x), newY(y) {}
 
@@ -152,8 +146,7 @@ void MoveShapeCommand::execute() {
 		return;
 	}
 
-	// Logical "move" only
-	oldX = oldY = 0; // Default origin
+	oldX = oldY = 0;
 	moved = true;
 
 	view.showMessage("Pretend moving shape to (" + std::to_string(newX) + "," + std::to_string(newY) + ")");
@@ -169,7 +162,6 @@ bool MoveShapeCommand::isUndoable() const {
 	return true;
 }
 
-/* ===================== DeleteShapeCommand ===================== */
 DeleteShapeCommand::DeleteShapeCommand(Model& m, IView& v, int sIdx, int shIdx)
 	: model(m), view(v), slideIndex(sIdx), shapeIndex(shIdx) {}
 

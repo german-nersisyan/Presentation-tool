@@ -1,6 +1,6 @@
 # PowerPoint CLI
 
-**PowerPoint CLI** is a command-line tool written in C++ that allows you to create, edit, and export simple presentations. It implements **Command pattern**, **Undo/Redo**, **SVG export**, **Logging**.
+**PowerPoint CLI** is a command-line tool written in C++ that allows you to create, edit, and export simple presentations. It implements **Command pattern**, **Undo/Redo**, **SVG export**, **Logging**, **JSONSerializer**.
 
 This project is intended as an educational and portfolio-level project.
 
@@ -15,6 +15,7 @@ This project is intended as an educational and portfolio-level project.
 - 🖼 Export slides to SVG
 - 🧾 Logger (`cli.log`)
 - 📜 Command journal (`cli.jou`)
+- 📑 JSON Serialization
 - 🧠 Clean MVC + Command architecture
 
 ### Description
@@ -28,6 +29,7 @@ This project is intended as an educational and portfolio-level project.
 - **src/Logger.cpp** – Implementation of logging system.
 - **PowerPointCLI.cpp** – Main entry point for CLI application.
 - **SVGRenderer.cpp** – Implementation of SVG export.
+- **JSONSerializer.cpp** - Handles saving and loading presentations using JSON format.
 
 #File structure in Visual Studio
 
@@ -51,6 +53,8 @@ include/
 ├─ Logger/
 │ ├─ CommandJournal.h
 │ └─ Logger.h
+├─ Serializer/
+│ └─ JSONSerializer.h
 ├─ Visualization/
 │ └─ SVGRenderer.h
 ├─ View/
@@ -62,6 +66,7 @@ src/
 │ ├─ Commands.cpp
 │ ├─ Parser.cpp
 │ └─ Tokenizer.cpp
+├─ JSONSerializer.cpp
 ├─ Logger.cpp
 ├─ PowerPointCLI.cpp
 └─ SVGRenderer.cpp
@@ -76,5 +81,7 @@ add-shape -type square -size 40 -color blue
 export-svg -index 0 -file demo.svg
 undo
 redo
+save-json -file demo.json
+load-json -file demo.json
 exit
 ```

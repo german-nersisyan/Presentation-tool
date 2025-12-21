@@ -12,9 +12,6 @@ class Model {
 public:
 	Model() = default;
 
-	/* ===================== Slides ===================== */
-
-	// add-slide
 	int addSlide(const std::string& title) {
 		slides.push_back(title);
 		slideShapes.emplace_back();
@@ -22,7 +19,6 @@ public:
 		return currentSlide;
 	}
 
-	// remove-slide
 	bool removeSlide(int index) {
 		if (!isValidSlide(index))
 			return false;
@@ -38,7 +34,6 @@ public:
 		return true;
 	}
 
-	// undo remove-slide
 	void insertSlide(
 		int index,
 		const std::string& title,
@@ -72,9 +67,6 @@ public:
 		return !slides.empty();
 	}
 
-	/* ===================== Shapes ===================== */
-
-	// add-shape
 	void addShapeToCurrentSlide(std::shared_ptr<IShape> shape) {
 		if (currentSlide >= 0 &&
 			currentSlide < static_cast<int>(slideShapes.size()))
@@ -83,7 +75,6 @@ public:
 		}
 	}
 
-	// undo add-shape
 	void removeLastShapeFromCurrentSlide() {
 		if (currentSlide >= 0 &&
 			currentSlide < static_cast<int>(slideShapes.size()) &&
@@ -105,11 +96,16 @@ public:
 		return true;
 	}
 
-	// Add shape at specific position
 	void addShape(int slideIndex, int shapeIndex, std::shared_ptr<IShape> shape) {
 		if (slideIndex < 0 || slideIndex >= getSlideCount()) return;
 		auto& shapes = slideShapes[slideIndex];
 		if (shapeIndex < 0 || shapeIndex > static_cast<int>(shapes.size())) shapes.push_back(shape);
 		else shapes.insert(shapes.begin() + shapeIndex, shape);
+	}
+
+	void clear() {
+		slides.clear();
+		slideShapes.clear();
+		currentSlide = -1;
 	}
 };

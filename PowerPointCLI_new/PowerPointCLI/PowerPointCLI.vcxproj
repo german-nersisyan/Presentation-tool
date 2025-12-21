@@ -107,6 +107,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)external</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,6 +144,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)external</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -153,6 +155,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Commands.cpp" />
+    <ClCompile Include="JSONSerializer.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="PowerPointCLI.cpp" />
@@ -161,8 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommandFactories.h" />
-    <ClInclude Include="CommandHistory.h" />
-    <ClInclude Include="CommandHistory.h" />
     <ClInclude Include="CommandJournal.h" />
     <ClInclude Include="CommandRegistry.h" />
     <ClInclude Include="Commands.h" />
@@ -172,6 +173,7 @@
     <ClInclude Include="ICommandFactory.h" />
     <ClInclude Include="IShape.h" />
     <ClInclude Include="IView.h" />
+    <ClInclude Include="JSONSerializer.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="Parser.h" />

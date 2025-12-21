@@ -18,7 +18,7 @@ public:
 	void error(const std::string& message);
 
 private:
-	Logger();                         // singleton
+	Logger();
 	~Logger();
 	Logger(const Logger&) = delete;
 	Logger& operator=(const Logger&) = delete;
