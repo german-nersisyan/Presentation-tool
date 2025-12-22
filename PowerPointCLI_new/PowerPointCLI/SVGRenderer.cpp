@@ -20,7 +20,8 @@ bool SVGRenderer::renderSlide(const Model& model, int slideIndex, const std::str
 
 		if (shape->type() == "Rectangle") {
 			auto r = std::dynamic_pointer_cast<RectangleShape>(shape);
-			out << "<rect x=\"50\" y=\"50\" "
+			out << "<rect x=\"" << r->getX() << "\" "
+				<< "y=\"" << r->getY() << "\" "
 				<< "width=\"" << r->getWidth() << "\" "
 				<< "height=\"" << r->getHeight() << "\" "
 				<< "fill=\"" << (r->isFilled() ? r->getColor() : "none") << "\" "
@@ -29,7 +30,8 @@ bool SVGRenderer::renderSlide(const Model& model, int slideIndex, const std::str
 
 		else if (shape->type() == "Square") {
 			auto s = std::dynamic_pointer_cast<SquareShape>(shape);
-			out << "<rect x=\"100\" y=\"100\" "
+			out << "<rect x=\"" << s->getX() << "\" "
+				<< "y=\"" << s->getY() << "\" "
 				<< "width=\"" << s->getSize() << "\" "
 				<< "height=\"" << s->getSize() << "\" "
 				<< "fill=\"" << (s->isFilled() ? s->getColor() : "none") << "\" "
@@ -38,8 +40,8 @@ bool SVGRenderer::renderSlide(const Model& model, int slideIndex, const std::str
 
 		else if (shape->type() == "Circle") {
 			auto c = std::dynamic_pointer_cast<CircleShape>(shape);
-			out << "<circle cx=\"" << (200 + c->getX()) << "\" "
-				<< "cy=\"" << (200 + c->getY()) << "\" "
+			out << "<circle cx=\"" << c->getX() << "\" "
+				<< "cy=\"" << c->getY() << "\" "
 				<< "r=\"" << c->getRadius() << "\" "
 				<< "fill=\"" << (c->isFilled() ? "black" : "none") << "\" "
 				<< "stroke=\"black\" />\n";
@@ -50,9 +52,9 @@ bool SVGRenderer::renderSlide(const Model& model, int slideIndex, const std::str
 			int side = t->getSide();
 
 			out << "<polygon points=\""
-				<< "300,100 "
-				<< 300 + side << ",100 "
-				<< 300 + side / 2 << "," << (100 - side)
+				<< t->getX() << "," << t->getY() << " "
+				<< t->getX() + side << "," << t->getY() << " "
+				<< t->getX() + side / 2 << "," << (t->getY() - side)
 				<< "\" fill=\"" << (t->isFilled() ? t->getColor() : "none")
 				<< "\" stroke=\"" << t->getColor() << "\" />\n";
 		}

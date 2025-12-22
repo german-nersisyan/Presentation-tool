@@ -35,3 +35,168 @@ exit
 exit
 exit
 exit
+add-slide -title "Christmas Tree"
+add-shape -type rectangle -width 40 -height 60 -color brown -x 180 -y 300 -filled
+add-shape -type triangle -side 200 -color green -x 100 -y 250 -filled
+add-shape -type triangle -side 160 -color green -x 120 -y 200 -filled
+add-shape -type triangle -side 120 -color green -x 140 -y 150 -filled
+add-shape -type circle -radius 10 -color red -x 180 -y 280 -filled
+add-shape -type circle -radius 10 -color yellow -x 220 -y 220 -filled
+add-shape -type circle -radius 10 -color blue -x 150 -y 190 -filled
+export-svg -index 0 -file christmas_tree.svg
+????
+exit
+int x = sh.contains("x") ? sh["x"].get<int>() : 0;
+int y = sh.contains("y") ? sh["y"].get<int>() : 0;
+add-slide -title "Christmas Tree"
+add-shape -type rectangle -width 40 -height 60 -color brown -x 180 -y 300 -filled
+add-shape -type triangle -side 200 -color green -x 100 -y 250 -filled
+add-shape -type triangle -side 160 -color green -x 120 -y 200 -filled
+add-shape -type triangle -side 120 -color green -x 140 -y 150 -filled
+add-shape -type circle -radius 10 -color red -x 180 -y 280 -filled
+add-shape -type circle -radius 10 -color yellow -x 220 -y 220 -filled
+add-shape -type circle -radius 10 -color blue -x 150 -y 190 -filled
+export-svg -index 0 -file christmas_tree.svg
+????
+exit
+add-slide -title "Christmas Tree"
+add-shape -type rectangle -width 40 -height 60 -color brown -x 180 -y 350 -filled
+add-shape -type triangle -side 200 -color green -x 100 -y 300 -filled
+add-shape -type triangle -side 160 -color green -x 120 -y 240 -filled
+add-shape -type triangle -side 120 -color green -x 140 -y 180 -filled
+add-shape -type circle -radius 10 -color red -x 180 -y 330 -filled
+add-shape -type circle -radius 10 -color yellow -x 220 -y 270 -filled
+add-shape -type circle -radius 10 -color blue -x 150 -y 220 -filled
+export-svg -index 0 -file christmas_tree.svg
+exit
+add-slide -title "Christmas Tree"
+add-shape -type rectangle -width 40 -height 60 -color brown -x 120 -y 350 -filled
+add-shape -type triangle -side 200 -color green -x 100 -y 300 -filled
+add-shape -type triangle -side 160 -color green -x 120 -y 240 -filled
+add-shape -type triangle -side 120 -color green -x 140 -y 180 -filled
+add-shape -type circle -radius 10 -color red -x 180 -y 330 -filled
+add-shape -type circle -radius 10 -color yellow -x 220 -y 270 -filled
+add-shape -type circle -radius 10 -color blue -x 150 -y 220 -filled
+export-svg -index 0 -file christmas_tree.svg
+exit
+add-slide -title "Christmas Tree"
+add-shape -type rectangle -width 40 -height 60 -color brown -x 180 -y 300 -filled
+add-shape -type triangle -side 200 -color green -x 100 -y 300 -filled
+add-shape -type triangle -side 160 -color green -x 120 -y 240 -filled
+add-shape -type triangle -side 120 -color green -x 140 -y 180 -filled
+add-shape -type circle -radius 10 -color red -x 180 -y 330 -filled
+add-shape -type circle -radius 10 -color yellow -x 220 -y 270 -filled
+add-shape -type circle -radius 10 -color blue -x 150 -y 220 -filled
+export-svg -index 0 -file christmas_tree.svg
+exit
+add-slide -title "Christmas Tree"
+add-shape -type rectangle -width 40 -height 60 -color brown -x 180 -y 300 -filled
+add-shape -type triangle -side 200 -color green -x 100 -y 300 -filled
+add-shape -type triangle -side 160 -color green -x 120 -y 240 -filled
+add-shape -type triangle -side 120 -color green -x 140 -y 180 -filled
+add-shape -type circle -radius 5 -color red -x 180 -y 200 -filled
+add-shape -type circle -radius 5 -color blue -x 160 -y 210 -filled
+add-shape -type circle -radius 5 -color yellow -x 200 -y 210 -filled
+add-shape -type circle -radius 6 -color pink -x 150 -y 250 -filled
+add-shape -type circle -radius 6 -color cyan -x 180 -y 260 -filled
+add-shape -type circle -radius 6 -color purple -x 210 -y 250 -filled
+add-shape -type circle -radius 7 -color orange -x 140 -y 300 -filled
+add-shape -type circle -radius 7 -color green -x 180 -y 310 -filled
+add-shape -type circle -radius 7 -color red -x 220 -y 300 -filled
+export-svg -index 0 -file christmas_tree.svg
+exit
+add-slide -title "Christmas Tree"
+add-shape -type rectangle -width 40 -height 60 -color brown -x 180 -y 300 -filled
+add-shape -type triangle -side 200 -color green -x 100 -y 300 -filled
+add-shape -type triangle -side 160 -color green -x 120 -y 240 -filled
+add-shape -type triangle -side 120 -color green -x 140 -y 180 -filled
+add-shape -type circle -radius 5 -color red -x 175 -y 205 -filled
+add-shape -type circle -radius 5 -color blue -x 185 -y 205 -filled
+add-shape -type circle -radius 5 -color yellow -x 195 -y 205 -filled
+add-shape -type circle -radius 6 -color pink -x 165 -y 250 -filled
+add-shape -type circle -radius 6 -color cyan -x 180 -y 250 -filled
+add-shape -type circle -radius 6 -color purple -x 195 -y 250 -filled
+add-shape -type circle -radius 7 -color orange -x 155 -y 295 -filled
+add-shape -type circle -radius 7 -color green -x 180 -y 295 -filled
+add-shape -type circle -radius 7 -color red -x 205 -y 295 -filled
+export-svg -index 0 -file christmas_tree.svg
+exiy
+exit
+add-slide -title "Christmas Tree"
+add-shape -type rectangle -width 40 -height 60 -color brown -x 180 -y 300 -filled
+add-shape -type triangle -side 200 -color green -x 100 -y 300 -filled
+add-shape -type triangle -side 160 -color green -x 120 -y 240 -filled
+add-shape -type triangle -side 120 -color green -x 140 -y 180 -filled
+add-shape -type circle -radius 5 -color red -x 190 -y 195 -filled
+add-shape -type circle -radius 5 -color blue -x 170 -y 200 -filled
+add-shape -type circle -radius 5 -color yellow -x 210 -y 200 -filled
+add-shape -type circle -radius 6 -color pink -x 160 -y 240 -filled
+add-shape -type circle -radius 6 -color cyan -x 190 -y 250 -filled
+add-shape -type circle -radius 6 -color purple -x 220 -y 240 -filled
+add-shape -type circle -radius 7 -color orange -x 150 -y 290 -filled
+add-shape -type circle -radius 7 -color green -x 190 -y 300 -filled
+add-shape -type circle -radius 7 -color red -x 230 -y 290 -filled
+export-svg -index 0 -file christmas_tree.svg
+exit
+add-slide -title "Christmas Tree"
+add-shape -type rectangle -width 40 -height 60 -color brown -x 180 -y 300 -filled
+add-shape -type triangle -side 200 -color green -x 100 -y 300 -filled
+add-shape -type triangle -side 160 -color green -x 120 -y 240 -filled
+add-shape -type triangle -side 120 -color green -x 140 -y 180 -filled
+add-shape -type circle -radius 5 -color red -x 200 -y 185 -filled
+add-shape -type circle -radius 5 -color blue -x 180 -y 190 -filled
+add-shape -type circle -radius 5 -color yellow -x 220 -y 190 -filled
+add-shape -type circle -radius 6 -color pink -x 170 -y 230 -filled
+add-shape -type circle -radius 6 -color cyan -x 200 -y 240 -filled
+add-shape -type circle -radius 6 -color purple -x 230 -y 230 -filled
+add-shape -type circle -radius 7 -color orange -x 160 -y 280 -filled
+add-shape -type circle -radius 7 -color green -x 200 -y 290 -filled
+add-shape -type circle -radius 7 -color red -x 240 -y 280 -filled
+export-svg -index 0 -file christmas_tree.svg
+exit
+add-slide -title "Christmas Tree"
+add-shape -type rectangle -width 40 -height 60 -color brown -x 180 -y 300 -filled
+add-shape -type triangle -side 200 -color green -x 100 -y 300 -filled
+add-shape -type triangle -side 160 -color green -x 120 -y 240 -filled
+add-shape -type triangle -side 120 -color green -x 140 -y 180 -filled
+add-shape -type circle -radius 5 -color red -x 200 -y 175 -filled
+add-shape -type circle -radius 5 -color blue -x 180 -y 180 -filled
+add-shape -type circle -radius 5 -color yellow -x 220 -y 180 -filled
+add-shape -type circle -radius 6 -color pink -x 170 -y 220 -filled
+add-shape -type circle -radius 6 -color cyan -x 200 -y 230 -filled
+add-shape -type circle -radius 6 -color purple -x 230 -y 220 -filled
+add-shape -type circle -radius 7 -color orange -x 160 -y 270 -filled
+add-shape -type circle -radius 7 -color green -x 200 -y 280 -filled
+add-shape -type circle -radius 7 -color red -x 240 -y 270 -filled
+export-svg -index 0 -file christmas_tree.svg
+exit
+add-slide -title "Christmas Tree"
+add-shape -type rectangle -width 40 -height 60 -color brown -x 180 -y 300 -filled
+add-shape -type triangle -side 200 -color green -x 100 -y 300 -filled
+add-shape -type triangle -side 160 -color green -x 120 -y 240 -filled
+add-shape -type triangle -side 120 -color green -x 140 -y 180 -filled
+add-shape -type circle -radius 5 -color red -x 200 -y 155 -filled
+add-shape -type circle -radius 5 -color blue -x 180 -y 160 -filled
+add-shape -type circle -radius 5 -color yellow -x 220 -y 160 -filled
+add-shape -type circle -radius 6 -color pink -x 170 -y 200 -filled
+add-shape -type circle -radius 6 -color cyan -x 200 -y 210 -filled
+add-shape -type circle -radius 6 -color purple -x 230 -y 200 -filled
+add-shape -type circle -radius 7 -color orange -x 160 -y 250 -filled
+add-shape -type circle -radius 7 -color green -x 200 -y 260 -filled
+add-shape -type circle -radius 7 -color red -x 240 -y 250 -filled
+export-svg -index 0 -file christmas_tree.svg
+save-json -file christmas_tree.json
+exit
+load-json -file christmas_tree.json
+list-slides
+exit
+add-slide -title "Christmas Tree"
+add-slide -title "Santa Claus"
+add-slide -title "Snowman"
+add-slide -title "Christmas movies"
+add-slide -title "Christmas miracles"
+save-json -file christmas
+exit
+load-json -file christmas
+list-slides
+exit

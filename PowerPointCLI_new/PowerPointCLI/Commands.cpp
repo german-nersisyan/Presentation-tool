@@ -61,25 +61,26 @@ void AddShapeCommand::execute() {
 	std::string color = options.count("-color") ? options.at("-color") : "black";
 	bool filled = flags.count("-filled") > 0;
 
+	int x = options.count("-x") ? std::stoi(options.at("-x")) : 0;
+	int y = options.count("-y") ? std::stoi(options.at("-y")) : 0;
+
 	std::shared_ptr<IShape> shape;
 
 	if (type == "rectangle") {
 		int w = options.count("-width") ? std::stoi(options.at("-width")) : 100;
 		int h = options.count("-height") ? std::stoi(options.at("-height")) : 50;
-		shape = std::make_shared<RectangleShape>(w, h, color, filled);
+		shape = std::make_shared<RectangleShape>(w, h, x, y, color, filled);
 	}
 	else if (type == "square") {
 		int s = options.count("-size") ? std::stoi(options.at("-size")) : 50;
-		shape = std::make_shared<SquareShape>(s, color, filled);
+		shape = std::make_shared<SquareShape>(s, x, y, color, filled);
 	}
 	else if (type == "triangle") {
 		int s = options.count("-side") ? std::stoi(options.at("-side")) : 50;
-		shape = std::make_shared<TriangleShape>(s, color, filled);
+		shape = std::make_shared<TriangleShape>(s, x, y, color, filled);
 	}
 	else if (type == "circle") {
 		int r = options.count("-radius") ? std::stoi(options.at("-radius")) : 25;
-		int x = options.count("-x") ? std::stoi(options.at("-x")) : 0;
-		int y = options.count("-y") ? std::stoi(options.at("-y")) : 0;
 		shape = std::make_shared<CircleShape>(r, x, y, filled);
 	}
 	else {
