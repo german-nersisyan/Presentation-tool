@@ -239,3 +239,38 @@ undo
 list-slides
 history
 exit
+exit
+exit
+add-slide -title "First Slide"
+add-shape -type rectangle -width 200 -height 100 -x 50 -y 50 -color red -filled
+add-shape -type circle -radius 40 -x 300 -y 150 -color blue
+list-slides
+exit
+add-slide -title "First Slide"
+add-shape -type rectangle -width 200 -height 100 -x 50 -y 50 -color red -filled
+add-shape -type circle -radius 40 -x 300 -y 150 -color blue
+show-slides
+exit
+add-slide -title "Slide 1"
+add-shape -type rectangle -width 100 -height 50 -x 10 -y 10 -color red
+add-slide -title "Slide 2"
+add-shape -type circle -radius 25 -x 50 -y 50 -color blue
+select-slide -index 0
+add-shape -type square -size 40 -x 200 -y 200 -color green -filled
+show-slides
+select-slide -index 1
+show-slides -index 1
+show-slides -index 0
+add-shape -type circle -radius 25 -x 50 -y 50 -color blue
+show-slides -index 0
+exit
+add-slide -title "Slide 1"
+add-shape -type rectangle -color red
+add-slide -title "Slide 2"
+select-slide -index 0
+add-shape -type circle -color blue
+show-slides -index 0
+exit
+exit
+exit
+exit

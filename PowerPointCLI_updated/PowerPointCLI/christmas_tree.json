@@ -1,0 +1,105 @@
+{
+    "slides": [
+        {
+            "shapes": [
+                {
+                    "color": "brown",
+                    "filled": true,
+                    "height": 60,
+                    "type": "Rectangle",
+                    "width": 40,
+                    "x": 180,
+                    "y": 300
+                },
+                {
+                    "color": "green",
+                    "filled": true,
+                    "side": 200,
+                    "type": "Triangle",
+                    "x": 100,
+                    "y": 300
+                },
+                {
+                    "color": "green",
+                    "filled": true,
+                    "side": 160,
+                    "type": "Triangle",
+                    "x": 120,
+                    "y": 240
+                },
+                {
+                    "color": "green",
+                    "filled": true,
+                    "side": 120,
+                    "type": "Triangle",
+                    "x": 140,
+                    "y": 180
+                },
+                {
+                    "filled": true,
+                    "radius": 5,
+                    "type": "Circle",
+                    "x": 200,
+                    "y": 155
+                },
+                {
+                    "filled": true,
+                    "radius": 5,
+                    "type": "Circle",
+                    "x": 180,
+                    "y": 160
+                },
+                {
+                    "filled": true,
+                    "radius": 5,
+                    "type": "Circle",
+                    "x": 220,
+                    "y": 160
+                },
+                {
+                    "filled": true,
+                    "radius": 6,
+                    "type": "Circle",
+                    "x": 170,
+                    "y": 200
+                },
+                {
+                    "filled": true,
+                    "radius": 6,
+                    "type": "Circle",
+                    "x": 200,
+                    "y": 210
+                },
+                {
+                    "filled": true,
+                    "radius": 6,
+                    "type": "Circle",
+                    "x": 230,
+                    "y": 200
+                },
+                {
+                    "filled": true,
+                    "radius": 7,
+                    "type": "Circle",
+                    "x": 160,
+                    "y": 250
+                },
+                {
+                    "filled": true,
+                    "radius": 7,
+                    "type": "Circle",
+                    "x": 200,
+                    "y": 260
+                },
+                {
+                    "filled": true,
+                    "radius": 7,
+                    "type": "Circle",
+                    "x": 240,
+                    "y": 250
+                }
+            ],
+            "title": "Christmas Tree"
+        }
+    ]
+}
